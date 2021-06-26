@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import SingleRoom from './components/SingleRoom';
 import Rooms from './components/Rooms';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import Error from './components/Error'; 
 import NavBar from './components/NavBar';
 
@@ -17,7 +17,8 @@ function App() {
         <Route exact path ="/rooms" component={Rooms}/>
         <Route exact path="/rooms/:slug" component={SingleRoom}/>
         <Route component={Error}/>
-        
+        <Redirect to='/' />
+
         </Switch>
     </>
   );
